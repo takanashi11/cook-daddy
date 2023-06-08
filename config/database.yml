@@ -21,10 +21,8 @@ test:
   host: localhost
   database: cook_daddy_test
 
-
 production:
   <<: *default
-  database: cook_daddy_production
-  username: cook_daddy
-  password: <%= ENV['COOK_DADDY_DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+
