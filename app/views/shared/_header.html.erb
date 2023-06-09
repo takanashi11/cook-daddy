@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Carousel Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-Secondary">
+        <nav class="navbar fixed-top navbar-light bg-light">
+            <div class="d-flex justify-content-between col-12 ">
+                <div class="container">
+                <h4 class="navbar-brand" href="#">Cook Daddy</h4>
+                <% if @current_user %>
+                <%= "こんにちは、" %>
+                 <%= link_to "#{current_user.name}さん",user_path(current_user)%>
+                 <% else %>
+                <p>ようこそゲストさん</p>
+            <% end %>
+                </div>
+   
+                
+                <div class="container d-flex justify-content-end">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link"><%= link_to '新規登録', new_user_registration_path,class:"nav-item text-decoration-none text-dark"%></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#"><%= link_to 'ログイン', user_session_path,class:"nav-item text-decoration-none text-dark"%></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class:"nav-item text-decoration-none text-dark"%></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
