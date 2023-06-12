@@ -49,6 +49,7 @@ Things you may want to cover:
 | Column           | Type       | Options                        |
 | ------           | ------     | -----------                    |
 | recipe_title     | string     | null: false                    |
+| recipe_material  | text       | null: false                    |
 | recipe_text      | text       | null: false                    |
 | category_id      | integer    | null: false                    |
 | price            | integer    | null: false                    |
