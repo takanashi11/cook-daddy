@@ -1,0 +1,32 @@
+<div class='item-contents'>
+  <h2 class='title'>List display</h2>
+  <div class="subtitle" >
+    新規投稿一覧
+  </div>
+  <ul class='item-lists'>
+   <% if @recipe.present? %>
+    <% @recipe.each do |recipe| %>
+    <li class='list'>
+      <%= link_to recipe_path(recipe) do %>
+      <div class='item-img-content'>
+         <%= image_tag(recipe.image.variant(resize: '300x300'), class: 'card__img') if recipe.image.attached? %>
+      </div>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= recipe.recipe_title %>
+          
+        </h3>
+        <div class='item-price'>
+         <%= recipe.category.name %>
+          <div class='star-btn'>
+            <span class='star-count'>0</span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+    </li>
+  <% else %>
+   <p>リストが空です。</p>
+  <% end %>
+

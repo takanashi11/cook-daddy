@@ -1,0 +1,99 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">料理の情報を入力</h2>
+    <%= form_with model:@recipe, url:recipes_path,local: true do |f| %>
+
+    <%#= render 'shared/error_messages', model:@item,url:f.object %>
+
+ 
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        料理の画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        料理の名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :recipe_title, class:"items-text", id:"item-name", placeholder:"料理の名前（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          材料
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :recipe_material, class:"items-text", id:"item-info", placeholder:"材料（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        作り方
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :recipe_text, class:"items-text", id:"item-info", placeholder:"作り方（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+  
+  
+ 
+
+    <div class="items-detail">
+      <div class="weight-bold-text">レシピの詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+        <div class="weight-bold-text">
+    
+        </div>
+
+      </div>
+    </div>
+
+    <div class="items-detail">
+    </div>
+  
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>かかった金額<br>(¥300〜9,999,999)</span>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+        </div>
+    </div>
+  
+
+    <div class="caution">
+    </div>
+
+
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+
+    
+  </div>
+  <% end %>
+  </footer>
+</div>
