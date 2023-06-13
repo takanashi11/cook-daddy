@@ -89,7 +89,7 @@
         <% @recipe.each.with_index(1) do |recipe,index| %>
         <% break if index > 1 %>
         <% latest_recipe = Recipe.order(created_at: :desc).first %>
-        <%= link_to recipe_path(latest_recipe) do %>
+        <%= link_to recipe_path(latest_recipe.id) do %>
           <% if latest_recipe.image.attached? %>
            <%= image_tag(latest_recipe.image.variant(resize: '500x500'), class: :card__img) if recipe.image.attached? %>
             <title>Recipe Title</title>
@@ -114,7 +114,7 @@
       <div class="col-md-5 order-md-1">
         <% break if index > 1 %>
         <% second_latest_recipe = Recipe.order(created_at: :desc).offset(1).first %>
-        <%= link_to recipe_path(second_latest_recipe) do %>
+        <%= link_to recipe_path(second_latest_recipe.id) do %>
           <% if second_latest_recipe.image.attached? %>
            <%= image_tag(second_latest_recipe.image.variant(resize: '500x500'), class: :card__img) if recipe.image.attached? %>
             <title>Recipe Title</title>
@@ -138,7 +138,7 @@
       <div class="col-md-5">
         <% break if index > 1 %>
           <% third_latest_recipe = Recipe.order(created_at: :desc).offset(2).first %>
-          <%= link_to recipe_path(third_latest_recipe) do %>
+          <%= link_to recipe_path(third_latest_recipe.id) do %>
           <% if third_latest_recipe.image.attached? %>
            <%= image_tag(third_latest_recipe.image.variant(resize: '500x500'), class: :card__img) if recipe.image.attached? %>
             <title>Recipe Title</title>
