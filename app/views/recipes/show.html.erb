@@ -1,0 +1,77 @@
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @recipe.recipe_title %>
+    </h2>
+    <div class="item-img-content text-center">
+      <%= image_tag(@recipe.image.variant(resize: '500x500')) if @recipe.image.attached? %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+      </span>
+      <span class="item-postage">
+      </span>
+    </div>
+
+    
+    <% if user_signed_in?%>
+     <% if current_user.id == @recipe.user_id %>
+       <%= link_to "商品の編集", edit_recipe_path, method: :get, class: "item-red-btn" %>
+       <p class="or-text">or</p>
+       <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"item-destroy" %>
+      <% end %>
+    <% end %>
+ 
+    
+    <div class="item-explain-box">
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= @recipe.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @recipe.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">材料</th>
+          <td class="detail-value"><%= @recipe.recipe_material %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">作り方</th>
+          <td class="detail-value"><%= @recipe.recipe_text %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">調理にかかった値段</th>
+          <td class="detail-value"><%= @recipe.price %></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="option">
+      <div class="favorite-btn">
+
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+
+        <span>不適切な投稿の通報</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment-box">
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の投稿
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの投稿 ＞
+    </a>
+  </div>
+</div>
+
+
