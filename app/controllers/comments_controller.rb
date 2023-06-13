@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to recipe_path(@comment.recipe_id) 
     else
-      @prototype = @comment.recipe
-      @comments = @recipe.comments
+      @recipe = Recipe.find(@comment.recipe_id)
+      @comments = @recipe.comments.includes(:user)
       render "recipes/show"
     end
   end
