@@ -60,7 +60,34 @@
         <span>不適切な投稿の通報</span>
       </div>
     </div>
+  
+
+
+
+  <div class="prototype__comments">
+    <div class="prototype__comment">
+     <% if user_signed_in? %>
+      <%= form_with(model: [@recipe, @comment], local: true ) do |f| %>
+        <div class="field">
+          <%= f.label :comment_text, "コメント" %><br />
+          <%= f.text_field :comment_text, id:"comment_content", style: "height: 60px; width: 600px;"%>
+        </div>
+        <div class="actions">
+          <%= f.submit "SEND", class: :form__btn, style: "height: 30px; width: 300px;"  %>
+        </div>
+      <% end %>
+    <% end %>
+      <ul class="comments_lists">
+        <% @comments.each do |comment| %>
+          <li class="comments_list">
+            <%= comment.user.nickname %>
+            <%= comment.comment_text %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
+ </div>
 
   <div class="comment-box">
   </div>
