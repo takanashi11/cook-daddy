@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @comment = Comment.new(recipe: @recipe)
   end
 
   def create
