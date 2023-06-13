@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_item2, only:[:list_display]
-  before_action :set_item, only:[:show,:move_to_index]
+  before_action :set_item, only:[:show,:move_to_index,:edit,:update,:destroy]
  # before_action :move_to_index, except: [:index, :show,:new,:create]
 
 
@@ -26,8 +26,26 @@ class RecipesController < ApplicationController
   end
 
   def show
-
   end
+
+  def edit
+  end
+
+  def update
+    if @recipe.update(recipe_params)
+    redirect_to root_path
+    else 
+      render :edit
+    end
+  end
+
+  def destroy
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to root_path
+  end
+
+
 
   private
   def recipe_params
