@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @comment = Comment.new(recipe: @recipe)
   end
 
   def create
@@ -26,6 +27,8 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @comments = @recipe.comments.includes(:user)
+    @comment = Comment.new(recipe_id: @recipe.id)
   end
 
   def edit
