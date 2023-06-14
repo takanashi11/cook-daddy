@@ -1,5 +1,3 @@
-<%= render "shared/second-header"%>
-
 <%= form_with model:@user, url: user_session_path, id:'new_user', class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
@@ -30,5 +28,6 @@
   </div>
 </div>
 <% end %>
-
-<%= render "shared/second-footer"%>
+<div class="form-footer">
+</div>
+</div>
