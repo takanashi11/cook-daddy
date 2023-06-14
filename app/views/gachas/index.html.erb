@@ -1,0 +1,51 @@
+<div class="item-show">
+  <div class="item-box">
+    <h1>Here are today's favorite recipes</h1>
+    <% @recipes.each do |recipe| %>
+    <h2 class="name">
+      <%= recipe.recipe_title %>
+    </h2>
+
+    <div class="item-img-content text-center">
+      <%= image_tag(recipe.image.variant(resize: '500x500')) if recipe.image.attached? %>
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+      </span>
+      <span class="item-postage">
+      </span>
+    </div>
+   
+    <div class="item-explain-box">
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= recipe.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= recipe.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">材料</th>
+          <td class="detail-value"><%= recipe.recipe_material %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">作り方</th>
+          <td class="detail-value"><%= recipe.recipe_text %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">調理にかかった値段</th>
+          <td class="detail-value"><%= recipe.price %></td>
+        </tr>
+      </tbody>
+    </table>
+   <% end %>
+   <%= link_to "やり直す", gachas_index_path(category_id: @recipes.first.category_id), method: :get, class: "item-red-btn" %>
+   <p class="or-text">or</p>
+   <%= link_to "もどる", root_path, method: :get, class:"item-destroy" %>
+  </div>
+</div>
+

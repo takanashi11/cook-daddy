@@ -54,6 +54,7 @@ Things you may want to cover:
 | category_id      | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
+| gacha_item_id    | integer    | null: false                    |
 ### Association
 
 - belongs_to :user

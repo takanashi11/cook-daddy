@@ -54,9 +54,9 @@
         <nav class="navbar fixed-top navbar-light bg-light">
             <div class="d-flex justify-content-between col-12 ">
                 <div class="container1">
+                 <%= link_to root_path, style: 'text-decoration: none; font-family: cursive;' do %>
                   <%= image_tag 'faget.png', alt: 'ロゴ', class: 'bd-placeholder-img', width: '100px', height: '100px' %>
                   <div class =container2>
-                <%= link_to root_path, style: 'text-decoration: none; font-family: cursive;' do %>
                 <h2 class="navbar-brand" style="font-size: 26px;">Cook Daddy</h2>
                 <% end %>
                 <% if user_signed_in? %>
