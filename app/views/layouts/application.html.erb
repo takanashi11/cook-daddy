@@ -53,9 +53,11 @@
     <nav class="navbar navbar-dark bg-Secondary">
         <nav class="navbar fixed-top navbar-light bg-light">
             <div class="d-flex justify-content-between col-12 ">
-                <div class="container">
+                <div class="container1">
+                  <%= image_tag 'faget.png', alt: 'ロゴ', class: 'bd-placeholder-img', width: '100px', height: '100px' %>
+                  <div class =container2>
                 <%= link_to root_path, style: 'text-decoration: none; font-family: cursive;' do %>
-                <h4 class="navbar-brand" href="#">Cook Daddy</h4>
+                <h2 class="navbar-brand" style="font-size: 26px;">Cook Daddy</h2>
                 <% end %>
                 <% if user_signed_in? %>
                  <%= "こんにちは、#{current_user.name}さん" %>
@@ -63,7 +65,7 @@
                     <p>ようこそゲストさん</p>
                    <% end %>
                   </div>
-   
+                </div>
                 
                 <div class="container d-flex justify-content-end">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,6 +93,8 @@
     </nav>
 
     </header>
+    <div class="bg-ground">  
+    </div>
     <%= yield %>
   </body>
 </html>

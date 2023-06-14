@@ -46,9 +46,8 @@
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
-
   <div class="container marketing">
-
+    <div class="marketing2">
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
@@ -78,8 +77,8 @@
 
 
     <!-- START THE FEATURETTES -->
-
     <hr class="featurette-divider">
+    <div class="back-ground">
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
@@ -92,7 +91,7 @@
         <% if latest_recipe %>
         <%= link_to recipe_path(latest_recipe.id) do %>
           <% if latest_recipe.image.attached? %>
-           <%= image_tag(latest_recipe.image.variant(resize: '500x500'), class: :card__img) if recipe.image.attached? %>
+           <%= image_tag(latest_recipe.image.variant(resize: '500x500'), class: :card__img2) if recipe.image.attached? %>
             <title>Recipe Title</title>
           <h3><%= latest_recipe.recipe_title %></h3>
           <% else %>
@@ -119,7 +118,7 @@
         <% if second_latest_recipe %>
         <%= link_to recipe_path(second_latest_recipe.id) do %>
           <% if second_latest_recipe.image.attached? %>
-           <%= image_tag(second_latest_recipe.image.variant(resize: '500x500'), class: :card__img) if recipe.image.attached? %>
+           <%= image_tag(second_latest_recipe.image.variant(resize: '500x500'), class: :card__img2) if recipe.image.attached? %>
             <title>Recipe Title</title>
           <h3><%= second_latest_recipe.recipe_title %></h3>
           <% else %>
@@ -145,7 +144,7 @@
           <% if third_latest_recipe %>
           <%= link_to recipe_path(third_latest_recipe.id) do %>
           <% if third_latest_recipe.image.attached? %>
-           <%= image_tag(third_latest_recipe.image.variant(resize: '500x500'), class: :card__img) if recipe.image.attached? %>
+           <%= image_tag(third_latest_recipe.image.variant(resize: '500x500'), class: :card__img2) if recipe.image.attached? %>
             <title>Recipe Title</title>
           <h3><%= third_latest_recipe.recipe_title %></h3>
           <% else %>
@@ -164,8 +163,8 @@
       <hr class="featurette-divider">
      </div>
     </div>
-    
-
+  </div>
+ </div>
     <!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->
