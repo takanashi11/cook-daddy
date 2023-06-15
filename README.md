@@ -1,27 +1,49 @@
-# README
+# アプリケーション名
+## Cook Daddy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+## レシピを投稿し合い、料理のレパートリーを増やすことで、毎日のメニューを考えるのが楽に、楽しくなります。
 
-Things you may want to cover:
+# URL
+## https://cook-daddy.onrender.com
+##
 
-* Ruby version
+# テスト用アカウント
+## Basic認証
+### ユーザー名 ：admin
+### パスワード　: 2222
+## テストアカウント
+### メールアドレス： test@test
+### パスワード：aaa111
 
-* System dependencies
+# 利用方法
+### テストアカウントでログイン→トップページ上部右上のボタンから投稿ボタン押下→投稿情報入力→レシピ投稿
+### →トップページから投稿詳細、編集、削除→トップページのボタンから、ランダムに投稿が出力されるガチャ機能
+### →確認後、ログアウト処理をお願いします。
 
-* Configuration
+# アプリケーションを作成した背景
+### 20～30代の料理を作りたい気持ちはあるが、毎日メニューを考えるのが大変。レシピサイトを見ても何を作るか迷ってしまう### という方に向けて作成したアプリケーションです。
 
-* Database creation
+# 洗い出した要件
+## https://docs.google.com/spreadsheets/d/1cmnsbDz4bA7tPEX87xQmMZd3gted2PaXjb1GeS7SKQU/edit#gid=982722306
 
-* Database initialization
+# 実装予定の機能
+### 検索機能
 
-* How to run the test suite
+# データベース設計
+## [![Image from Gyazo](https://i.gyazo.com/a503ec46f9d945f80a47c284ecefd4fb.png)](https://gyazo.com/a503ec46f9d945f80a47c284ecefd4fb)
 
-* Services (job queues, cache servers, search engines, etc.)
+# 画面遷移図
+##[![Image from Gyazo](https://i.gyazo.com/4bed1095c3cdb612acadbeb456ed7a2f.png)](https://gyazo.com/4bed1095c3cdb612acadbeb456ed7a2f)
 
-* Deployment instructions
+# 開発環境
+### Ruby on Rails、Ruby、JavaScript、Bootstrap、Visual Studio Code
 
-* ...
+# 工夫したポイント
+### いかにアプリを使っていただく方に、料理を楽しんでいただけるかをコンセプトに開発を行いました。
+### アプリをより良いものにしていくために、JavaScript、Bootstrapを追加して実装しました。
+
+
 
 # テーブル設計
 
@@ -54,7 +76,7 @@ Things you may want to cover:
 | category_id      | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
-| gacha_item_id    | integer    | null: false                    |
+
 ### Association
 
 - belongs_to :user
