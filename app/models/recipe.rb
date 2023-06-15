@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
   has_many :comments 
+  has_many :likes
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   has_one_attached :image
@@ -12,5 +13,9 @@ class Recipe < ApplicationRecord
   def draw_gacha_item
     gacha_item = GachaItem.create(item_name: self.recipe_title, rarity: "Common", recipe: self)
     return gacha_item
+  end
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
   end
 end

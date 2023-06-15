@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :recipes do
-   resources :comments, only: :create
+   resource :comments, only: :create
+   resource :likes, only: [:create, :destroy]
   end
 end

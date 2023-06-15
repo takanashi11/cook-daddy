@@ -50,17 +50,10 @@
 
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
 
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-
-        <span>不適切な投稿の通報</span>
-      </div>
+    <div id="like-btn<%= @recipe.id %>">
+      <%= render partial: "likes/like", locals: { recipe: @recipe } %>
     </div>
-  
 
 
 
@@ -88,17 +81,6 @@
     </div>
   </div>
  </div>
-
-  <div class="comment-box">
-  </div>
-  <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の投稿
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの投稿 ＞
-    </a>
-  </div>
 </div>
 
 
