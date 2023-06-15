@@ -60,24 +60,30 @@
   <div class="prototype__comments">
     <div class="prototype__comment">
      <% if user_signed_in? %>
-      <%= form_with(model: [@recipe, @comment], local: true ) do |f| %>
+      <%= form_with(model: [@recipe, @comment], local: true,id: "comment-form") do |f| %>
         <div class="field">
-          <%= f.label :comment_text, "コメント" %><br />
-          <%= f.text_field :comment_text, id:"comment_content", style: "height: 60px; width: 600px;"%>
+          <%= f.label :comment_text, "コメント" ,style: "font-size: 18px;"%><br />
+          <%= f.text_field :comment_text, class:"comment-text style" "height: 60px; width: 200px;"%>
         </div>
         <div class="actions">
           <%= f.submit "SEND", class: :form__btn, style: "height: 30px; width: 300px;"  %>
         </div>
       <% end %>
     <% end %>
-      <ul class="comments_lists">
-        <% @comments.each do |comment| %>
-          <li class="comments_list">
-            <%= comment.user.nickname %>
-            <%= comment.comment_text %>
-          </li>
+    <div class="comment-scroll">
+      <div id="comments" style="max-height: 200px; overflow: scroll;">
+        <h4>＜コメント一覧＞</h4>
+        <% @recipe.comments.each do |comment| %>
+          <div class="comment">
+            <div class="comments-text">
+              <p class="user-info"><%= comment.user.nickname %>: </p>
+              <p class="comment-text"><%= comment.comment_text %></p>
+            </div>
+          </div>
         <% end %>
-      </ul>
+      </div>
+    </div>
+
     </div>
   </div>
  </div>
