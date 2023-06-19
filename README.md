@@ -34,7 +34,7 @@
 ## [![Image from Gyazo](https://i.gyazo.com/a503ec46f9d945f80a47c284ecefd4fb.png)](https://gyazo.com/a503ec46f9d945f80a47c284ecefd4fb)
 
 # 画面遷移図
-##[![Image from Gyazo](https://i.gyazo.com/4bed1095c3cdb612acadbeb456ed7a2f.png)](https://gyazo.com/4bed1095c3cdb612acadbeb456ed7a2f)
+## [![Image from Gyazo](https://i.gyazo.com/e01d6ec5f79eb05bbc5096e8e5fbe83a.png)](https://gyazo.com/e01d6ec5f79eb05bbc5096e8e5fbe83a)
 
 # 開発環境
 ### Ruby on Rails、Ruby、JavaScript、Bootstrap、Visual Studio Code
