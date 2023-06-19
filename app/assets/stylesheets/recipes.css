@@ -234,7 +234,7 @@
 .item-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
-  color: #ec7125;
+  color: #ea352d;
   font-weight: bold;
   background-color: #dca758;
   border-radius: 30px;
@@ -245,7 +245,7 @@
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #ec7125;
+  color: #ea352d;
   font-weight: bold;
   background-color: #dca758;
   border-radius: 30px;
@@ -697,4 +697,8 @@ body{
   color: #eee;
   font-weight: bold;
   border: none;
+}
+
+.contents.row{
+padding-top: 200px;
 }
