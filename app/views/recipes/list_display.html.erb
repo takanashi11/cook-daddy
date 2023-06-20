@@ -2,10 +2,11 @@
   <h2 class='title'>List display</h2>
   <div class="subtitle" >
     新規投稿一覧
+    <%= paginate @recipes %>
   </div>
   <ul class='item-lists'>
    <% if @recipe.present? %>
-    <% @recipe.each do |recipe| %>
+    <% @recipes.each do |recipe| %>
     <li class='list'>
       <%= link_to recipe_path(recipe) do %>
       <div class='item-img-content2'>
@@ -29,4 +30,4 @@
   <% else %>
    <p>リストが空です。</p>
   <% end %>
-
+ 

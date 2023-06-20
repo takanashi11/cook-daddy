@@ -79,6 +79,7 @@
         <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
       </div>
       <div class="col-md-5">
+        <div class="d-flex justify-content-center align-items-center">
         <% @recipe.each.with_index(1) do |recipe,index| %>
         <% break if index > 1 %>
         <% latest_recipe = Recipe.order(created_at: :desc).first %>
@@ -86,8 +87,8 @@
         <%= link_to recipe_path(latest_recipe.id) do %>
           <% if latest_recipe.image.attached? %>
            <%= image_tag(latest_recipe.image.variant(resize: '500x500'), class: :card__img2) if recipe.image.attached? %>
+        </div>
             <title>Recipe Title</title>
-          <h3><%= latest_recipe.recipe_title %></h3>
           <% else %>
           <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
@@ -107,14 +108,15 @@
         <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
       </div>
       <div class="col-md-5 order-md-1">
+        <div class="d-flex justify-content-center align-items-center">
         <% break if index > 1 %>
         <% second_latest_recipe = Recipe.order(created_at: :desc).offset(1).first %>
         <% if second_latest_recipe %>
         <%= link_to recipe_path(second_latest_recipe.id) do %>
           <% if second_latest_recipe.image.attached? %>
            <%= image_tag(second_latest_recipe.image.variant(resize: '500x500'), class: :card__img2) if recipe.image.attached? %>
+        </div>
             <title>Recipe Title</title>
-          <h3><%= second_latest_recipe.recipe_title %></h3>
           <% else %>
           <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
@@ -133,14 +135,15 @@
         <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
       </div>
       <div class="col-md-5">
+        <div class="d-flex justify-content-center align-items-center">
         <% break if index > 1 %>
           <% third_latest_recipe = Recipe.order(created_at: :desc).offset(2).first %>
           <% if third_latest_recipe %>
           <%= link_to recipe_path(third_latest_recipe.id) do %>
           <% if third_latest_recipe.image.attached? %>
            <%= image_tag(third_latest_recipe.image.variant(resize: '500x500'), class: :card__img2) if recipe.image.attached? %>
+        </div>
             <title>Recipe Title</title>
-          <h3><%= third_latest_recipe.recipe_title %></h3>
           <% else %>
           <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>

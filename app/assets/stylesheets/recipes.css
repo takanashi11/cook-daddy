@@ -249,7 +249,8 @@
   font-weight: bold;
   background-color: #dca758;
   border-radius: 30px;
-  padding: 15px;
+  padding: 25px;
+  text-align: center;
 }
 
 .item-lists {

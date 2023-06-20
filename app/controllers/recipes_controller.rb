@@ -59,7 +59,7 @@ class RecipesController < ApplicationController
   end
 
   def set_item2
-    @recipe = Recipe.order(created_at: :desc)
+    @recipes = Recipe.page(params[:page]).per(4).order('created_at DESC')
   end
 
   def move_to_index

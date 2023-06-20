@@ -59,7 +59,6 @@
 
   <div class="prototype__comments">
     <div class="prototype__comment">
-     <% if user_signed_in? %>
       <%= form_with(model: [@recipe, @comment], local: true,id: "comment-form") do |f| %>
         <div class="field">
           <%= f.label :comment_text, "コメント" ,style: "font-size: 18px;"%><br />
@@ -68,8 +67,7 @@
         <div class="actions">
           <%= f.submit "SEND", class: :form__btn, style: "height: 30px; width: 300px;"  %>
         </div>
-      <% end %>
-    <% end %>
+     <% end %>
     <div class="comment-scroll">
       <div id="comments" style="max-height: 200px; overflow: scroll;">
         <h4>＜コメント一覧＞</h4>
