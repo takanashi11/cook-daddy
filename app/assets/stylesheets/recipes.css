@@ -682,17 +682,14 @@ body{
 }
 
 .comment {
-  display: flex;
-  align-items: center;
   margin-bottom: 10px;
-  display: flex;
   border: none;
 }
 
 
 .user-info {
-  width: 100px;
-  margin-right: 10px;
+margin: 11px 0 26px 30px;
+text-align: left;
 }
 
 .comment-text {
@@ -700,6 +697,15 @@ body{
   border: none;
 }
 
+p.comment-text{
+  text-align: left;
+}
+
+
+.comments-text {
+display: flex;
+text-align: left;
+}
 .form__btn{
   background-color: #ec7125;
   border-radius: 30px;
