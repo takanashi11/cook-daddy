@@ -18,11 +18,16 @@
 
 
 .registration-main{
-  padding-bottom: 300px;
+  padding-bottom: 250px;
   background-image: url('faget2.png');
   background-size: 300px;
   background-position: center; 
-  margin-top: 150px;
+  padding-top: 150px;
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 

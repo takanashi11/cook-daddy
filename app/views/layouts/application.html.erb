@@ -73,12 +73,14 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <% unless user_signed_in? %>
                         <li class="nav-item">
                         <a class="nav-link"><%= link_to '新規登録', new_user_registration_path,class:"nav-item text-decoration-none text-dark"%></a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="#"><%= link_to 'ログイン', user_session_path,class:"nav-item text-decoration-none text-dark"%></a>
                         </li>
+                      <% end %>
                         <% if current_user %>
                         <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class:"nav-item text-decoration-none text-dark"%></a>
