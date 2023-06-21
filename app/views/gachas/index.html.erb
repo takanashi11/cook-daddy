@@ -30,11 +30,11 @@
         </tr>
         <tr>
           <th class="detail-item">材料</th>
-          <td class="detail-value"><%= recipe.recipe_material %></td>
+          <td class="detail-value"><%= simple_format(recipe.recipe_material) %></td>
         </tr>
         <tr>
           <th class="detail-item">作り方</th>
-          <td class="detail-value"><%= recipe.recipe_text %></td>
+          <td class="detail-value"><%= simple_format(recipe.recipe_text) %></td>
         </tr>
         <tr>
           <th class="detail-item">調理にかかった値段</th>
