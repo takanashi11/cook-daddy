@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
  # before_action :move_to_index, except: [:index, :show,:new,:create]
 
 
+
   def index
     @recipe = Recipe.order(created_at: :desc)
   end
@@ -47,7 +48,10 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
-
+  def search
+    @q = Recipe.ransack(params[:q])
+    @recipes = @q.result
+  end
 
   private
   def recipe_params
