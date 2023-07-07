@@ -96,6 +96,8 @@
   </div>
   <div class='register-btn'>
     <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= button_to "Facebookで登録", user_facebook_omniauth_authorize_path, data: { turbo: false }, method: :post %>
+    <%= button_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, data: { turbo: false }, method: :post %>
   </div>
   <p class='register-info'>本人情報の登録について</p>
 </div>
