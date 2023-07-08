@@ -103,7 +103,7 @@
     <%= f.submit "会員登録" ,class:"register-red-btn" %>
    <div class="acount">
     <div class="acount2">
-     <%= button_to "Facebookで登録", user_facebook_omniauth_authorize_path, data: { turbo: false }, method: :post %>
+      <%= button_to "Facebookで登録", user_facebook_omniauth_authorize_path, data: { turbo: false }, method: :post %>
     </div>
      <%= button_to "Googleで登録", user_google_oauth2_omniauth_authorize_path, data: { turbo: false }, method: :post %>
    </div>

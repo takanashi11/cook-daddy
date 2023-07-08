@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/gachas/index', to: 'gachas#index'
   end
   resources :users
-  resources :users, only: :show
   resources :recipes do
    resource :comments, only: :create
    resource :likes, only: [:create, :destroy]

@@ -24,4 +24,12 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def create
+    if params[:sns_auth] == 'true'
+      pass = Devise.friendly_token
+      params[:user][:password] = pass
+      params[:user][:password_confirmation] = pass
+    end
+    super
+   end
 end
